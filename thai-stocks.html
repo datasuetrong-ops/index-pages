@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>หุ้นไทย - Thai Stocks</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- โหลด Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark">
+
+  <nav class="navbar">
+    <div class="logo">Finance Dashboard</div>
+    <ul>
+      <li><a href="index.html">ค่าเงินโลก</a></li>
+      <li><a href="gold.html">ราคาทอง</a></li>
+      <li><a href="thai-stocks.html" class="active">หุ้นไทย</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>📊 ตลาดหุ้นไทย (SET)</h1>
+    <p>ข้อมูลหุ้นไทยแบบจำลอง (Realtime Mock) พร้อมกราฟแท่งและตารางรายละเอียด</p>
+
+    <div class="card">
+      <!-- ✅ ต้องมี canvas -->
+      <canvas id="thaiChart" width="400" height="200"></canvas>
+    </div>
+
+    <div class="card">
+      <h2>รายละเอียดหุ้นไทย</h2>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>ชื่อหุ้น</th>
+            <th>ราคา (บาท)</th>
+            <th>การเปลี่ยนแปลง (%)</th>
+            <th>Sector</th>
+          </tr>
+        </thead>
+        <tbody id="thaiTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ✅ โหลด JS หลังจาก DOM สร้างเสร็จ -->
+  <script src="thai-stocks.js" defer></script>
+</body>
+</html>

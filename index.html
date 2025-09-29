@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>💰 Financial Dashboard</h1>
+    <p class="subtitle">ติดตามค่าเงินและหุ้นสำคัญแบบเรียลไทม์</p>
+    <div class="mode-toggle">
+      <button id="toggleMode">🌙 Dark/Light Mode</button>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <a href="index.html" class="active">🏠 Home</a>
+    <a href="gold.html">🏅 Gold Prices</a>
+    <a href="thai-stocks.html">📊 Thai Stocks</a>
+    <a href="currency.html">🌍 Currency Rates</a>
+  </nav>
+
+  <main class="container">
+    <!-- Card 1: Currency -->
+    <section class="card">
+      <h2>🌍 ค่าเงินแข็งที่สุด</h2>
+      <canvas id="currencyChart"></canvas>
+      <p>ค่าเงินที่แข็งหมายถึงสามารถแลกเปลี่ยนได้ในมูลค่าสูงเมื่อเทียบกับดอลลาร์สหรัฐ เช่น ดีนาร์คูเวต (KWD) เป็นสกุลเงินที่มีค่ามากที่สุดในโลก</p>
+    </section>
+
+    <!-- Card 2: S&P500 -->
+    <section class="card">
+      <h2>📈 หุ้น S&P 500</h2>
+      <canvas id="sp500Chart"></canvas>
+      <p>แสดงการเปลี่ยนแปลงราคาหุ้นของบริษัทใหญ่ในดัชนี S&P 500 (สีเขียว = ขึ้น, แดง = ลง)</p>
+      <canvas id="sparklineSP500" width="150" height="50"></canvas>
+    </section>
+
+    <!-- Card 3: Gold Price -->
+    <section class="card">
+      <h2>🏅 ราคาทองคำ (USD/oz)</h2>
+      <p>ราคาทองล่าสุด: <span id="goldPriceValue">Loading...</span> USD/oz</p>
+      <canvas id="goldChart"></canvas>
+      <canvas id="sparklineGold" width="150" height="50"></canvas>
+      <p>ราคาทองคำเป็นสินทรัพย์ปลอดภัย นักลงทุนมักซื้อช่วงเศรษฐกิจผันผวน กราฟนี้แสดงราคาทองคำใน 7 วันล่าสุด</p>
+    </section>
+  </main>
+  <!-- Card 4: Thai Stocks -->
+  <section class="card">
+    <h2>ราคาหุ้นไทย </h2>
+    <p>ข้อมูลหุ้นไทยแบบจำลอง (Realtime Mock) พร้อมกราฟแท่งและตารางรายละเอียด</p>
+    <canvas id="thaiChart" width="400" height="200"></canvas>
+    <canvas id="sparklineThai" width="150" height="50"></canvas>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>ชื่อหุ้น</th>
+          <th>ราคา (บาท)</th>
+          <th>การเปลี่ยนแปลง (%)</th>
+          <th>Sector</th>
+        </tr>
+      </thead>
+      <tbody id="thaiTable"></tbody>
+    </table>
+    <script src="thai-stocks.js" defer></script>
+  </section>
+  <footer class="footer">
+    <p>Developed by Your Name | Data from Public APIs</p>
+    <p>© 2025 Financial Dashboard</p>
+  </footer>
+  <section class="card">
+    <h2>💱 Currency Rates</h2>
+    <canvas id="currencyRatesChart"></canvas>
+    <p>กราฟแสดงอัตราแลกเปลี่ยนสกุลเงินหลัก เช่น USD/THB, EUR/THB ในช่วง 5 วันทำการล่าสุด</p>
+    <script src="currency.js" defer></script>
+  </section>
+  <script src="script.js" defer></script>
+</body>
+</html>

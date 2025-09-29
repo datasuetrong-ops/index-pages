@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>log in to amazon</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <h1 style width="500px"height="500px"data-aos="fade-down">log in to amazon</h1>
+    <p style width="200px"height="200px"data-aos="fade-down">กรุณากรอกชื่อผู้ใช้และรหัสผ่าน</p>
+    <script>
+        function checkLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === 'Data' && password === '0911') {
+                alert('เข้าสู่ระบบสำเร็จ');
+                window.location.href = 'index.html';
+            } else {
+                alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+
+            }
+        }
+    </script>
+    <form onsubmit="checkLogin(event)"data-aos="fade-down">
+        <label for="username"data-aos="fade-down">ชื่อผู้ใช้:</label>
+        <input type="text" id="username" name="username" required data-aos="fade-down">
+        <label for="password"data-aos="fade-down">รหัสผ่าน:</label>
+        <input type="password" id="password" name="password" required data-aos="fade-down">
+        <button type="submit" style="background-color: rgb(243, 169, 8);padding: 14px 36px;
+        border-radius: 6px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background 0.2s ;"data-aos="fade-down">เข้าสู่ระบบ</button>
+
+    
+    </form>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init();
+</script>
+</body>
+</html>

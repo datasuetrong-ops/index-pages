@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gold Price</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>🏆 Gold Price</h1>
+    <p class="subtitle">ติดตามราคาทองคำรายวันแบบเรียลไทม์</p>
+    <div class="mode-toggle">
+      <button id="toggleMode">🌙 Dark/Light Mode</button>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <a href="index.html">🏠 Home</a>
+    <a href="gold.html" class="active">🏅 Gold Prices</a>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h2>📉 ราคาทองคำ (USD/oz)</h2>
+      <p>ราคาทองล่าสุด: <span id="goldPriceValue">Loading...</span> USD/oz</p>
+      <canvas id="goldChart"></canvas>
+      <canvas id="sparklineGold" width="150" height="50"></canvas>
+      <p>ราคาทองคำเป็นสินทรัพย์ปลอดภัย นักลงทุนมักซื้อช่วงเศรษฐกิจผันผวน กราฟนี้แสดงราคาทองคำใน 7 วันล่าสุด</p>
+    </section>
+  </main>
+
+  <footer>© 2025 Financial Dashboard</footer>
+  
+  <script src="gold.js"></script>
+</body>
+</html>
